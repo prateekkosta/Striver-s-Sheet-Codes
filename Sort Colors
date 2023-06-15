@@ -1,0 +1,23 @@
+def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        # deviding array in parts
+        left= 0
+        mid= 0
+        right = len(nums)-1
+
+        while mid<= right:
+            if nums[mid]== 0:
+                nums[left], nums[mid] = nums[mid], nums[left]
+                # now updating parts
+                left= left+1
+                mid= mid+1
+                # if element is 1 than updating mid
+            elif nums[mid]== 1:
+                mid= mid+1
+                # if element is 2 swapping 
+            else:
+                nums[mid], nums[right] = nums[right], nums[mid]
+                # updating right
+                right= right-1
