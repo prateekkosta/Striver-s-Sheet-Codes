@@ -1,0 +1,11 @@
+ def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        #predefining start and end points
+        start, end= 0,1
+        merged= []
+        intervals.sort(key= lambda  x: (x[start], x[end]))
+        for i in intervals:
+            if not merged or (merged[-1][end] <i[start]):
+                merged.append(i)
+            else:
+                merged[-1][end]= max(merged[-1][end], i[end])
+        return merged
