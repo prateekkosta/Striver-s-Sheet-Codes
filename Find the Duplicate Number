@@ -1,0 +1,17 @@
+def findDuplicate(self, nums: List[int]) -> int:
+        #Using Tortoise and Hare algorithm
+        T= nums[0]
+        H= nums[0]
+        #moving T and H until they meet
+        while True:
+            T= nums[T]
+            H= nums[nums[H]]
+            if T==H:
+                break
+        # reseting T to start
+        T= nums[0]
+        #moving T and H with same speed
+        while T!=H:
+            T=nums[T]
+            H=nums[H]
+        return T
