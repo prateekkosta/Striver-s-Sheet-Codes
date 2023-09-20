@@ -9,7 +9,7 @@ def getInversions(arr, n) :
     return cnt
 
 
-# Taking inpit using fast I/O.
+# Taking input using fast I/O.
 def takeInput() :
     n = int(input())
     arr = list(map(int, stdin.readline().strip().split(" ")))
